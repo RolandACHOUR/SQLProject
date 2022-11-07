@@ -12,7 +12,7 @@ class ActorDocument:
     last_update: datetime
 
     @abstractmethod
-    def to_a_document(self, index_name: str = None, es_id: int = 1) -> Dict:
+    def to_es_document(self, index_name: str = None, es_id: int = 1) -> Dict:
         return {
             "_index": index_name,
             "_id": es_id,
