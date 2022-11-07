@@ -1,7 +1,6 @@
 from abc import abstractmethod, ABCMeta
 from dataclasses import dataclass
 from typing import Dict
-from sdv.domain.entities.actor import Actor
 import datetime
 
 
@@ -11,7 +10,6 @@ class ActorDocument:
     first_name: str
     last_name: str
     last_update: datetime
-    tmp: str
 
     @abstractmethod
     def to_a_document(self, index_name: str = None, es_id: int = 1) -> Dict:
@@ -24,7 +22,5 @@ class ActorDocument:
                 "first_name": self.first_name,
                 "last_name": self.last_name,
                 "last_update": self.last_update,
-            }
+            },
         }
-
-
